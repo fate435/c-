@@ -1,0 +1,20 @@
+快速对齐ctrl+k+d
+撤回ctrl+z
+选定shift+home/end
+注释使用取消ctrl+k+c/u
+#region (解释)    #endregion
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            #region 隐藏
+            Console.WriteLine("Hello World!");//打印输出
+            Console.ReadKey();//暂停程序,接受输入后继续
+            #endregion
+        }
+    }
+}
