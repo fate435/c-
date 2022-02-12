@@ -1,0 +1,30 @@
+程序异常————bug，不同于语法错误，不明原因引起
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = 30;
+            string name = "啾啾";
+            decimal salary = 100000m;
+            Console.WriteLine("我叫" + name + "我今年" + age + "岁，"+"收入有"+salary+"元");
+            Console.ReadKey();
+            //占位符的使用
+            Console.WriteLine("我叫{0},我今年{1}岁，收入有{2}元", name, age, salary);
+            Console.ReadKey();
+            //对比c和c++，所用的占位符更简洁，位次由括号里的数码所决定
+            int n1 = 10;
+            int n2 = 20;
+            int temp = n1;
+            n1 = n2;
+            n2 = temp;
+            //交换数据
+            Console.WriteLine("此时n1为{0}，n2为{1}", n1, n2);
+
+
+        }
+    }
+}
