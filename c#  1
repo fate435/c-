@@ -1,0 +1,13 @@
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");//打印输出
+            Console.ReadKey();//暂停程序,接受输入后继续
+        }
+    }
+}
