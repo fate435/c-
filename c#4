@@ -1,0 +1,38 @@
+\n:换行
+\"：英文半角的双引号
+\t:排版用空格
+\b:删前面一个（退格键），位于字符串两端时不起作用
+\\：\
+ctrl+k+c添加注释
+@：取消斜线\的转义功能，将字符串按原格式输出
+算术计算符：+-*\%加减乘除余
+隐式类型转换/自动类型转换：两类型相兼容，由小范围变成大范围如int————double
+显式类型转换/强制类型转换：两类型相兼容，由大范围变成小范围如double————int
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1 = 10;
+            int n2 = 20;
+            n1 = n1 - n2;
+            n2 = n1 + n2;
+            n1 = n2 - n1;
+            //交换数据,不使用第三变量
+            Console.WriteLine("此时n1为{0}，n2为{1}", n1, n2);
+            Console.WriteLine("你喜欢吃什么水果");
+            string fruit = Console.ReadLine();
+            Console.WriteLine("你喜欢吃的水果是{0}", fruit);
+            Console.ReadKey();
+            int n3 = 10;
+            double n4 = 3;
+            double d=n3/n4;
+            Console.WriteLine("{0:0.00}",d);//表示保留二位小数
+
+
+        }
+    }
+}
