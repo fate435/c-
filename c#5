@@ -1,0 +1,76 @@
+Convert类型变换要求表面上可以换，例如abc不可能变成int 或double型而123可以
+Convert.ToInt32
+++    a=a+1;
+--    a=a-1;
+++a,先+1，然后进行运算
+a++，先运算，然后+1
+一元运算符优先级高于二元运算符
+bool类型true/fause
+><==
+逻辑或||
+逻辑与&&
+逻辑非！
+逻辑表达式与先计算
+&和|也对，但是冗余
+分支结构：if   if——else
+选择：switch——case
+循环结构：while  do whlie  for  foreach
+if（）
+{
+}
+c#里，1不能当成bool变量的数据，所以if语句里只可以有true和false
+if语句能且只能使用bool变量
+if——else if处理多情况
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool b = false;
+            if (!b)
+            {
+                Console.WriteLine("b为假");
+              }
+            /*if(1)
+            {
+                Console.WriteLine("1也可以判断");
+            }*/
+            //c#里，1和0不能当成判断条件，上面的语句存zai语法错误
+            Console.WriteLine("第二个代码开始,请输入你的名");
+            string name = Console.ReadLine();
+            bool c = (name == "pengyuyan");
+            if(c)
+            {
+                Console.WriteLine("你很帅");
+            }
+            else
+            {
+                Console.WriteLine("我不认识你");
+            }
+            //if-else语句必产生行为
+            //比较数大小
+            Console.WriteLine("请输入第一个数");
+            int number_1=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("请输入第二个数");
+            int number_2=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("请输入第三个数");
+            int number_3=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("下面输出极大的数");
+            if(number_1>=number_2&&number_1>=number_3)
+            {
+                Console.WriteLine(number_1);
+            }
+            if(number_2>=number_1&&number_2>=number_3)
+            {
+                Console.WriteLine(number_2);
+            }
+            if(number_3>=number_1&&number_3>=number_2)
+            {
+                Console.WriteLine(number_3);
+            }
+        }
+    }
+}
