@@ -1,0 +1,66 @@
+if - else if处理多情况
+异常捕获：程序执行时遇到的各式各样的异常，采用try——catch来捕获
+实现过程：
+try
+{
+可能会出现异常的代码；
+}
+catch
+{
+出现异常以后要执行的代码；
+}
+try里的任意一行代码出现错误，其他行都不会执行
+
+变量的作用域：从声明的括号开始，到对应的结束括号结束
+
+让某段代码满足一个条件执行，否则不，常用bool
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = 0;
+            Console.WriteLine("请输入一个数");
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(number * 2);
+            }
+            catch
+            {
+                Console.WriteLine("你输入的不是数");
+            }
+        }
+    }
+}
+
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = 0;
+            bool b = true;
+            Console.WriteLine("请输入一个数");
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("你输入的不是数");
+                b=false;
+            }
+            if(b)
+            {
+                Console.WriteLine(number * 2);
+            }
+        }
+    }
+}
