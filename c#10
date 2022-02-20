@@ -1,0 +1,61 @@
+do-while:先执行一遍循环体，通过条件进行判断
+while循环先判断条件
+do
+{
+循环体；
+}
+while（循环条件）；
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string answer;
+            do
+            {
+                Console.WriteLine("您满意吗（yes or no）");
+                answer = Console.ReadLine();
+
+            }
+            while (answer=="no");
+        }
+    }
+}
+
+
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "";
+            double number;
+            do
+            {
+                Console.WriteLine("请输入一个数，我们将打印它的二倍（输入q结束）");
+                //情况有，数，q，其他，要进行判断
+                input = Console.ReadLine();
+                if (input != "q")
+                {
+                    try
+                    {
+                        number = Convert.ToDouble(input);
+                        Console.WriteLine(number * 2);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("输入的不是一个数，请重试");
+                    }
+                }
+            }
+            while (input != "q");
+            Console.WriteLine("谢谢使用");
+        }
+    }
+}
