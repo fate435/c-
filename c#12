@@ -1,0 +1,23 @@
+Console.WriteLine默认换行
+Console.Write不默认换行
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            int j;
+            for(i=1;i<=9;i++)
+            {
+                for(j=1;j<=i;j++)
+                {
+                    Console.Write("{0}*{1}={2}\t", i, j, i * j);
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+}
