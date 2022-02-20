@@ -1,0 +1,61 @@
+continue：继续下一次循环且不执行continue后面的代码
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //计算1到100的和，除了7的倍数
+            int sum = 0;
+            int i = 0;
+            while(i<=100)
+            {
+                if (i % 7 == 0)
+                {
+                    i++;
+                    continue;
+                }
+                sum += i;
+                i++;
+            }
+            Console.WriteLine(sum);
+            Console.ReadKey();
+        }
+    }
+}
+
+for循环，for（int i=0；i<length;i++）分别是记录循环次数，循环条件，改变循环条件防死循环
+for循环用于已了解循环次数
+
+//素数1-100；
+using System;
+
+namespace practice_c//命名空间
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1-100以内的素数
+            int i;
+            int j;
+            int y;
+            for (i = 2; i <= 100; i++)
+            {
+                for (j = 2; j <= i; j++)
+                {
+                    y = i % j;
+                    if (j == i)
+                        Console.WriteLine(i);
+                    if (y != 0)
+                        continue;
+                    else
+                        break; 
+                }
+            }
+
+        }
+    }
+}
