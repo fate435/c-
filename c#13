@@ -1,0 +1,24 @@
+Convert.ToInt32()调用int.Parse()进行类型变换，所以后者效率稍高一点，若不符合要求立即报错
+int.TryParse():不抛异常，属于方法&函数，返回一个bool值
+bool b=int.TryParse("123",number)；参数
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number_1 = 100;
+            bool b_1 = int.TryParse("123", out number_1);//可以类型转换时，输出number变为123，且bool为true
+            Console.WriteLine(b_1);
+            Console.WriteLine(number_1);
+            Console.ReadKey();
+            int number_2 = 100;
+            bool b_2 = int.TryParse("abc", out number_2);//不可以类型转换时，输出number为返回0，且bool为false
+            Console.WriteLine(b_2);
+            Console.WriteLine(number_2);
+            Console.ReadKey();
+        }
+    }
+}
