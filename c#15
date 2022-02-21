@@ -1,0 +1,58 @@
+1.  F11单步调试（按住fn键）
+2.  F10逐过程调试
+3.  断点调试：对应行最左边灰色区域单击一次
+三元表达式：表达式1？表达式2：表达式3；
+表达式1为bool类型，表达式2和表达式3类型一样，且代表整个三元表达式的类型
+if-else简单的可用三元表达式代替
+随机数
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("随机数的实现");
+            Random r = new Random();
+            int random=r.Next(1,10);//随机数的范围，返回一个int型的数
+            Console.WriteLine(random);
+        }
+    }
+}
+
+
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("随机数的实现");
+            Console.WriteLine("测测你的运气,输入q开始");
+            Random r = new Random();//创建一个对象
+            while (Console.ReadLine()=="q")
+            {
+                int random = r.Next(1, 10);//随机数的范围，返回一个int型的数，可以取到最左边，但取不到最右边
+                switch(random)
+                {
+                    case 1:Console.WriteLine("运气很好");
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:Console.WriteLine("运气一般");
+                        break;
+                    case 7:
+                    case 8:
+                    case 9:Console.WriteLine("运气不好");
+                        break;
+                }
+            }
+
+        }
+    }
+}
