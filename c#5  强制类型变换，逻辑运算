@@ -1,5 +1,5 @@
 Convert类型变换要求表面上可以换，例如abc不可能变成int 或double型而123可以
-Convert.ToInt32
+Convert.ToInt32（）
 ++    a=a+1;
 --    a=a-1;
 ++a,先+1，然后进行运算
