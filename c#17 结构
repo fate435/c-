@@ -1,0 +1,38 @@
+using System;
+
+namespace ConsoleApp2
+{
+    //不同于枚举类型，结构类型里的元素需要public支持
+    public enum Gender
+    {
+        男,
+        女
+    }
+    public struct Person//声明一个结构类型，同c结构体，可以一次性声明多个不同类型的变量
+    {
+        public string _name;//字段,全局变量名加上public，字段能存多个值。而变量仅能存一个
+        public int _age;//字段命名时前面加一个下划线_，用于区分于变量
+        public Gender _gender;
+    }
+    public struct Color
+    {
+        public int _red;
+        public int _green;
+        public int _blue;
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person pz;
+            pz._age = 18;
+            pz._gender = Gender.男;
+            pz._name = "于泮之";
+            Console.WriteLine("我的名字是{0}，今年{1}岁，我是个{2}的",pz._name,pz._age,pz._gender);
+            Color red;
+            red._red = 255;
+            red._green = 0;
+            red._blue = 0;
+        }
+    }
+}
