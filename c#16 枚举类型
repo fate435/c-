@@ -1,0 +1,74 @@
+using System;
+
+namespace ConsoleApp2
+{
+    public enum Gender//确定一个规则
+    {
+        男,
+        女
+    }
+    public enum season
+    {
+        春=1,//默认从0开始，改变
+        夏,
+        秋,
+        冬
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            #region 使用
+            Gender gender_1 = Gender.男;
+            Gender gender_2 = Gender.女;//声明一个变量，仅可以是男或女
+            season i = season.冬;
+            Console.WriteLine(i);//会打印一个“冬”
+            Console.WriteLine("我是个{0}的", gender_1);//可以被引用
+            int j = (int)gender_1;//强制类型转换
+            Console.WriteLine(j);
+            int k = (int)gender_2;
+            Console.WriteLine(k);//枚举类型从0开始，依次递增
+            int m = 2;
+            Gender nan = (Gender)m;
+            Console.WriteLine(nan);//超出范围，强制转换失败，仍为原来的数
+            int s = 1;
+            Gender girl = (Gender)s;
+            Console.WriteLine(girl);//范围内成功
+            double ef = 2.9;
+            season chun = (season)ef;
+            Console.WriteLine(chun);//double采用向下取整
+            string str = Convert.ToString(i);//等效于i.ToString();
+            Console.WriteLine(str);//合理
+            //string类型转换为枚举类型，方法调用Enum.Parse()，具体使用方法如下
+            string win = "3";
+            season winter=(season)Enum.Parse(typeof(season), "3");
+            Console.WriteLine(winter);
+            #endregion
+            //练习:提示选一个季节，并打印到控制台
+            Console.WriteLine("请选择一个季节：1-春天，2-夏天，3-秋天，4-冬天");
+            string input = Console.ReadLine();
+            switch(input)
+            {
+                case "0":
+                    season s1=(season)Enum.Parse(typeof(season), input);
+                    Console.WriteLine(s1);
+                    break;
+                case "1":
+                    season s2 = (season)Enum.Parse(typeof(season), input);
+                    Console.WriteLine(s2);
+                    break;
+                case "2":
+                    season s3 = (season)Enum.Parse(typeof(season), input);
+                    Console.WriteLine(s3);
+                    break;
+                case "3":
+                    season s4 = (season)Enum.Parse(typeof(season), input);
+                    Console.WriteLine(s4);
+                    break;
+            }
+        }
+    }
+}
+
+
+枚举类型和变量相同，需要于命名空间spacename下class上创建，为了标准化变量而存在。
