@@ -1,0 +1,50 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] gulu = { 45, 25, 78, 56,  32, 6 };//n个数
+            int temp = 0;
+            for (int i = 0; i < gulu.Length - 1; i++)//一共比较n-1轮
+            {
+                for (int j =i; j < gulu.Length  - 1; j++)//每次比较n-i次
+                {
+                    if (gulu[i] < gulu[j])
+                    {
+                        temp = gulu[i];
+                        gulu[i] = gulu[j];
+                        gulu[j] = temp;
+                        //temp = gulu[j];
+                        //gulu[j] = gulu[j + 1];
+                        //gulu[j + 1] = temp;
+                    }
+                }
+            }
+            for (int n = 0; n < gulu.Length; n++)
+                Console.WriteLine("{0}\t", gulu[n]);
+        }
+    }
+}
+
+
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] gulu = { 45, 25, 78, 56,  32, 6 };//n个数
+            Array.Sort(gulu);//sort方法升序排列
+            for (int n = 0; n < gulu.Length; n++)
+                Console.WriteLine("{0}\t", gulu[n]);
+            Array.Reverse(gulu);//reverse方法对数组进行翻转
+            for (int i = 0; i < gulu.Length; i++)
+                Console.WriteLine("{0}\t", gulu[i]);
+        }
+    }
+}
