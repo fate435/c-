@@ -1,0 +1,53 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //寻找数组中的最大值，最小值，和
+            int[] num = { 23, 564, 23, 56, 78, 98, 12, 34, 56, 34 };
+            //int max=num[0];
+            //int min=num[0];
+            int max = int.MinValue;//int范围的极小
+            int min = int.MaxValue;//int范围的极大
+            int sum = 0;
+            for (int i= 0; i < num.Length; i++)
+            {
+                if (max < num[i])
+                    max = num[i];
+                if (min > num[i])
+                    min = num[i];
+                sum += num[i];
+            }
+            Console.WriteLine("数组的极大值是{0}，极小值是{1}，和是{2}", max, min, sum);
+        }
+    }
+}
+
+
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //向名间添加分隔符
+            string[] name = { "阿黄", "阿泮", "阿夯", "俊豪", "启航", "阿凯","阿蛋" };
+            string str = null;
+            for(int i=0;i<name.Length;i++)
+            {
+                if (i == name.Length - 1)
+                    str += name[i];
+                else
+                    str += name[i] + "|";
+            }
+            Console.WriteLine(str);
+            Console.ReadKey();
+
+        }
+    }
+}
