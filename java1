@@ -1,0 +1,78 @@
+package aa;
+import java.util.Scanner;/*调用Scanner*/
+
+public class homework {
+	public static void main(String[] args) {
+		while (true) 
+		{
+			/* 将configuration的值换成GBK显示中文 */
+			System.out.println("以下代码实现计算n!的值，并输出算式");
+			Scanner s = new Scanner(System.in);
+			int n;
+			while (true) 
+			{
+				System.out.println("请输入n的值，n是一个非负整数");
+				if (s.hasNextInt()) 
+				{
+					n = s.nextInt();
+					break;
+
+				} 
+				else 
+				{
+					System.out.println("格式错误");
+					s.next();
+				}
+			}
+			if (n < 0)/* 负数判断不知道怎么写在上面的循环里 */
+			{
+				System.out.println("负数是无意义的");
+			} 
+			else
+			{
+				System.out.println("第一种方法：利用while循环");
+				int i = 1;
+				int result = 1;
+				while (i <= n) 
+				{
+					result *= i;
+					System.out.print(i);
+					if (i < n)
+						System.out.print("*");
+					i++;
+				}
+				System.out.println("结果=" + result);
+				System.out.println("第二种方法：利用do-while循环");
+				i = result = 1;
+				do 
+				{
+					result *= i;
+					if (n > 0)
+						System.out.print(i);
+					if (i < n)
+						System.out.print("*");
+					i++;
+				} 
+				while (i <= n);
+				System.out.println("结果=" + result);
+				System.out.println("第三种方法：利用for循环");
+				result = 1;
+				for (i = 1; i <= n; i++) 
+				{
+					result *= i;
+					System.out.print(i);
+					if (i < n)
+						System.out.print("*");
+				}
+				System.out.println("结果=" + result);
+			}
+			System.out.println("输入0结束程序，输入其他则继续运算");
+			Scanner b = new Scanner(System.in);
+			if (b.hasNextInt()&&b.nextInt() == 0)
+				break;
+			else
+				continue;
+		}
+		System.out.println("程序已退出");
+	}
+}
